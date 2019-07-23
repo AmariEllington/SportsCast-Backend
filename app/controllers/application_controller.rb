@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  
+
     def issue_token(payload)
         JWT.encode(payload, "supersecretcode")
       end
@@ -12,6 +14,7 @@ class ApplicationController < ActionController::API
       end
       
       def current_user
+  
         token = get_token
         decoded_token = decode_token(token)
         user = User.find(decoded_token["user_id"])

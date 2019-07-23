@@ -1,4 +1,6 @@
 class Api::V1::UsersController < ApplicationController
+ 
+
     def index
         users = []
         User.all.each do |user|
@@ -8,15 +10,17 @@ class Api::V1::UsersController < ApplicationController
           }
           users << user_hash
         end
-        render json: users
+        render json: users, include: [:pages]
       end
 
     def create
+     
         user = User.new(username: params[:username], password: params[:password])
         if user.save
           payload = {user_id: user.id}
           token = issue_token(payload)
           render json: { jwt: token }
+
         else
           render json: { error: "Signup not successful !"}
         end
