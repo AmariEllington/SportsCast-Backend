@@ -40,7 +40,7 @@ class PagesController < ApplicationController
     private
   
       def page_params
-       params.require(:page).permit(:name, :twitter, :yotube)
+       params.require(:page).permit(:name, :twitter, :youtube)
       end
   
       def current_page

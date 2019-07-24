@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   end
 
 resources :pages
-resources :user_pages
 
   post "/auth/create", to: "auth#create"
   get "/auth/show", to: "auth#show"

@@ -5,18 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = [
-    { username: "Daniel", password: "daniel123" },
-    { username: "Gabriel", password: "gabriel123" },
-    { username: "Lucy", password: "lucy123" },
-  ]
-  
-  User.destroy_all
-  
-  users.each do |user|
-    User.create user
-    puts "Created user #{user[:username]}, password: #{user[:password]}"
-  end
+Page.destroy_all 
+User.destroy_all
+ 
+
   
   pages = [
     { name: "AFC Bournemouth", twitter:"afcbournemouth", youtube: "https://www.youtube.com/playlist?list=PLDSAlkBZMWj6HxQaOIwvWYWmrN-UMal93"},
@@ -41,29 +33,30 @@ users = [
     { name: "Wolves", twitter:"Wolves", youtube: "https://www.youtube.com/playlist?list=UUQ7Lqg5Czh5djGK6iOG53KQ"},
   ]
 
-  Page.destroy_all
+ 
   
   pages.each do |page|
     Page.create page
     puts "Created a page #{page[:name]}, twitter: #{page[:twitter]}, youtube: #{page[:youtube]}"
   end
 
-userpages = [
-  {users_id: 1, pages_id: 3 },
-  {users_id: 2, pages_id: 6 },
-  {users_id: 3, pages_id: 10 },
-]
+ users = [
+    { username: "Daniel", password: "daniel123", page_id: 1},
+    { username: "Gabriel", password: "gabriel123", page_id: 2},
+    { username: "Lucy", password: "lucy123", page_id: 3} ,
+  ]
+  
 
-UserPage.destroy_all
-
-userpages.each do |userpage|
-  UserPage.create userpage
-  puts "Created a user #{userpage[:user_id]}, page #{userpage[:page_id]}"
-end
-
-
-
-
+  
+  users.each do |user|
+    createdUser = User.create user
+    createdUser.save
+    puts "Created user #{user[:username]}, password: #{user[:password]}, page #{user[:page_id]}"
+    puts createdUser
+    puts createdUser.username
+    puts createdUser.password
+    puts createdUser.page_id
+  end
 
   puts "Finished user creation"
   puts "Finished seeding"

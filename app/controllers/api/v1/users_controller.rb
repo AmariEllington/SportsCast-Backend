@@ -2,19 +2,18 @@ class Api::V1::UsersController < ApplicationController
  
 
     def index
-        users = []
-        User.all.each do |user|
-          user_hash = {
-            username: user[:username],
-            id: user[:id]
-          }
-          users << user_hash
-        end
-        render json: users, include: [:pages]
+        users = User.all
+        
+        render json: users.to_json(:include => [:page], :except => [:updated_at, :created_at, :password_digest])
+      
       end
 
+      def show
+        user = User.find_by(params[:id])
+      end
+
+
     def create
-     
         user = User.new(username: params[:username], password: params[:password])
         if user.save
           payload = {user_id: user.id}
