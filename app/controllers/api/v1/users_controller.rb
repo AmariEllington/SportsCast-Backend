@@ -13,8 +13,8 @@ class Api::V1::UsersController < ApplicationController
       end
 
 
-    def create
-        user = User.new(username: params[:username], password: params[:password])
+    def create;
+        user = User.new(username: params[:username], password: params[:password], page_id: params[:page_id])
         if user.save
           payload = {user_id: user.id}
           token = issue_token(payload)
