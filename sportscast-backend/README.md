@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# SportsCast-Backend
->>>>>>> a9af0fce6745ebfaf4bb610d32e0603a0b54901b
