@@ -18,11 +18,14 @@ class ApplicationController < ActionController::API
         token = get_token
         decoded_token = decode_token(token)
         user = User.find(decoded_token["user_id"])
-        user_hash = {
-          username: user[:username],
-          id: user[:id],
-          page_id: user[:page_id]
-        }
+        user.to_json(:include => [:page], :except => [:updated_at, :created_at, :password_digest, :page_id])
+        # user_hash = {
+        #   username: user[:username],
+        #   id: user[:id],
+        #   page_id: user[:page_id],
+      
+         
+        # }
       end
       
       def logged_in

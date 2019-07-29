@@ -64,6 +64,12 @@ PodcastGroup.destroy_all
     {name: "football"},
     {name: "college_basketball"},
     {name: "nba"},
+    {name: "college_football"},
+    {name: "mlb"},
+    {name: "nfl"},
+    {name: "rugby"},
+    {name: "boxing"},
+    {name: "golf"}
   ]
 
 
@@ -77,17 +83,56 @@ PodcastGroup.destroy_all
   podcasts = [
     football = [
           {name: "World Football", url:"https://tunein.com/embed/player/p1854/", podcast_group_id: PodcastGroup.where(name: "football")[0].id},
-          {name: "ESPN FC", url:"https://tunein.com/embed/player/p478539/", podcast_group_id: PodcastGroup.where(name: "football")[0].id}
+          {name: "ESPN FC", url:"https://tunein.com/embed/player/p478539/", podcast_group_id: PodcastGroup.where(name: "football")[0].id},
+          {name: "5 live's Football Daily", url:"https://tunein.com/embed/player/p134938/", podcast_group_id: PodcastGroup.where(name: "football")[0].id},
+          {name: "The Sky Sports Football Podcast", url:"https://tunein.com/embed/player/p816785/", podcast_group_id: PodcastGroup.where(name: "football")[0].id}
     ],
     collegeBasketball = [
       {name: "ESPNU: College Basketball", url:"https://tunein.com/embed/player/p307305/", podcast_group_id: PodcastGroup.where(name: "college_basketball")[0].id},
-      {name: "Podcast On The Brink", url:"https://tunein.com/embed/player/p399843/", podcast_group_id: PodcastGroup.where(name: "college_basketball")[0].id}
+      {name: "Podcast On The Brink", url:"https://tunein.com/embed/player/p399843/", podcast_group_id: PodcastGroup.where(name: "college_basketball")[0].id},
+      {name: "Courtside with Greenberg & Dakich", url:"https://tunein.com/embed/player/p999594/", podcast_group_id: PodcastGroup.where(name: "college_basketball")[0].id}
     ],
     nba = [
       {name: "The Woj Pod", url:"https://tunein.com/embed/player/p824073/", podcast_group_id: PodcastGroup.where(name: "nba")[0].id},
+      {name: "Yahoo Sports NBA: Chris Mannix", url:"https://tunein.com/embed/player/p829140/", podcast_group_id: PodcastGroup.where(name: "nba")[0].id},
+      {name: "Sekou Smith's Hang Time Podcast (NBA.com)", url:"https://tunein.com/embed/player/p393714/", podcast_group_id: PodcastGroup.where(name: "nba")[0].id},
+      {name: "The Ringer NBA Show", url:"https://tunein.com/embed/player/p878035/", podcast_group_id: PodcastGroup.where(name: "nba")[0].id}
+    ],
+    collegeFootball = [
+      {name: "College Football Live", url:"https://tunein.com/embed/player/p796870/", podcast_group_id: PodcastGroup.where(name: "college_football")[0].id},
+      {name: "The Audible with Feldman & Mandel", url:"https://tunein.com/embed/player/p650901/", podcast_group_id: PodcastGroup.where(name: "college_football")[0].id},
+      {name: "ESPN: First Draft", url:"https://tunein.com/embed/player/p392526/", podcast_group_id: PodcastGroup.where(name: "college_football")[0].id},
+      {name: "Campus Conversation", url:"https://tunein.com/embed/player/p339243/", podcast_group_id: PodcastGroup.where(name: "college_football")[0].id}
+    ],
+    mlb = [
+      {name: "MLB.com Statcast Podcast", url:"https://tunein.com/embed/player/p779237/", podcast_group_id: PodcastGroup.where(name: "mlb")[0].id},
+      {name: "MLB.com Extras", url:"https://tunein.com/embed/player/p779234/", podcast_group_id: PodcastGroup.where(name: "mlb")[0].id},
+      {name: "MLB.com Cut4Cast", url:"https://tunein.com/embed/player/p779240/", podcast_group_id: PodcastGroup.where(name: "mlb")[0].id},
+    ],
+    nfl = [
+      {name: "NFL.com: Around the NFL", url:"https://tunein.com/embed/player/p532683/", podcast_group_id: PodcastGroup.where(name: "nfl")[0].id},
+      {name: "The Dave Dameshek Football Program", url:"https://tunein.com/embed/player/p384854/", podcast_group_id: PodcastGroup.where(name: "nfl")[0].id},
+      {name: "Move the Sticks with Daniel Jeremiah", url:"https://tunein.com/embed/player/p642552/", podcast_group_id: PodcastGroup.where(name: "nfl")[0].id},
+      {name: "NFL Fantasy Live", url:"https://tunein.com/embed/player/p450121/", podcast_group_id: PodcastGroup.where(name: "nfl")[0].id}
+    ], 
+    rugby = [
+      {name: "House of Rugby", url:"https://tunein.com/embed/player/p1162744/", podcast_group_id: PodcastGroup.where(name: "rugby")[0].id},
+      {name: "5 live's Rugby Union Weekly", url:"https://tunein.com/embed/player/p962944/", podcast_group_id: PodcastGroup.where(name: "rugby")[0].id},
+      {name: "Will Greenwood's Rugby Podcast", url:"https://tunein.com/embed/player/p1154542/", podcast_group_id: PodcastGroup.where(name: "rugby")[0].id}
+    ],
+    boxing = [
+      {name: "5 live Boxing with Costello & Bunce", url:"https://tunein.com/embed/player/p966710/", podcast_group_id: PodcastGroup.where(name: "boxing")[0].id},
+      {name: "Ringside Toe2Toe Boxing Podcast", url:"https://tunein.com/embed/player/p948219/", podcast_group_id: PodcastGroup.where(name: "boxing")[0].id},
+      {name: "Beyond The Ropes Podcast", url:"https://tunein.com/embed/player/p921821/", podcast_group_id: PodcastGroup.where(name: "boxing")[0].id}
+    ],
+    golf = [
+      {name: "SkyLife Golf Podcast", url:"https://tunein.com/embed/player/p625379/", podcast_group_id: PodcastGroup.where(name: "golf")[0].id},
+      {name: "The Cut: The BBC Golf podcast", url:"https://tunein.com/embed/player/p1156777/", podcast_group_id: PodcastGroup.where(name: "golf")[0].id},
+      {name: "Life On Tour Golf Podcast", url:"https://tunein.com/embed/player/p1156778/", podcast_group_id: PodcastGroup.where(name: "golf")[0].id}
     ]
   ]
- 
+  
+  
 
   podcasts.each do |podcast|
     Podcast.create podcast

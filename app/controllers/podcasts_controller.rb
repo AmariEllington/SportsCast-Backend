@@ -7,7 +7,8 @@ class PodcastsController < ApplicationController
       end
     
       def show
-    
+        render json: @podcast
+        
       end
     
       def new

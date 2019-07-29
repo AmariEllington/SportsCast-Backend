@@ -7,7 +7,8 @@ class PagesController < ApplicationController
     end
   
     def show
-  
+      
+      render json: @page
     end
   
     def new
