@@ -62,7 +62,8 @@ PodcastGroup.destroy_all
 
   podcastGroup = [
     {name: "football"},
-    {name: "College Basketball"}
+    {name: "college_basketball"},
+    {name: "nba"},
   ]
 
 
@@ -79,10 +80,14 @@ PodcastGroup.destroy_all
           {name: "ESPN FC", url:"https://tunein.com/embed/player/p478539/", podcast_group_id: PodcastGroup.where(name: "football")[0].id}
     ],
     collegeBasketball = [
-      {name: "ESPNU: College Basketball", url:"https://tunein.com/embed/player/p307305/", podcast_group_id: PodcastGroup.where(name: "College Basketball")[0].id},
-      {name: "Podcast On The Brink", url:"https://tunein.com/embed/player/p399843/", podcast_group_id: PodcastGroup.where(name: "College Basketball")[0].id}
+      {name: "ESPNU: College Basketball", url:"https://tunein.com/embed/player/p307305/", podcast_group_id: PodcastGroup.where(name: "college_basketball")[0].id},
+      {name: "Podcast On The Brink", url:"https://tunein.com/embed/player/p399843/", podcast_group_id: PodcastGroup.where(name: "college_basketball")[0].id}
+    ],
+    nba = [
+      {name: "The Woj Pod", url:"https://tunein.com/embed/player/p824073/", podcast_group_id: PodcastGroup.where(name: "nba")[0].id},
     ]
   ]
+ 
 
   podcasts.each do |podcast|
     Podcast.create podcast

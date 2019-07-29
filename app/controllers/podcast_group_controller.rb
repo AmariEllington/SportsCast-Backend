@@ -1,5 +1,5 @@
 class PodcastGroupController < ApplicationController
-    before_action :current_podcast_group, only: [:show, :edit, :destroy]
+    before_action :current_podcast_group, only: [:edit, :destroy]
 
     def index
         podcastGroups = PodcastGroup.all
@@ -7,7 +7,9 @@ class PodcastGroupController < ApplicationController
     end
     
       def show
-    
+        category = PodcastGroup.find_by(name:params[:id])
+        podcasts = Podcast.where(podcast_group_id: category)
+        render json: podcasts
       end
     
       def new
