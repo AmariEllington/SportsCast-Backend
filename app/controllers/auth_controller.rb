@@ -11,7 +11,7 @@ class AuthController < ApplicationController
           render json: { error: "The token couldn't be created. Login failed"}
         end
       end
-    end
+    
     
       def show
         if logged_in
@@ -20,6 +20,8 @@ class AuthController < ApplicationController
           render json: {error: "Incorrect token"}
         end
       end
+
+    end
     
 
 

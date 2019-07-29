@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Page.destroy_all 
 User.destroy_all
+Podcast.destroy_all
+PodcastGroup.destroy_all
  
 
   
@@ -41,9 +43,9 @@ User.destroy_all
   end
 
  users = [
-    { username: "Daniel", password: "daniel123", page_id: 1},
-    { username: "Gabriel", password: "gabriel123", page_id: 2},
-    { username: "Lucy", password: "lucy123", page_id: 3} ,
+    { username: "Daniel", password: "daniel123", page_id: Page.all.sample.id},
+    { username: "Gabriel", password: "gabriel123", page_id: Page.all.sample.id },
+    { username: "Lucy", password: "lucy123", page_id: Page.all.sample.id} ,
   ]
   
 
@@ -57,6 +59,38 @@ User.destroy_all
     puts createdUser.password
     puts createdUser.page_id
   end
+
+  podcastGroup = [
+    {name: "football"},
+    {name: "College Basketball"}
+  ]
+
+
+  podcastGroup.each do |podcastname|
+    PodcastGroup.create podcastname
+    
+  end
+
+
+
+  podcasts = [
+    football = [
+          {name: "World Football", url:"https://tunein.com/embed/player/p1854/", podcast_group_id: PodcastGroup.where(name: "football")[0].id},
+          {name: "ESPN FC", url:"https://tunein.com/embed/player/p478539/", podcast_group_id: PodcastGroup.where(name: "football")[0].id}
+    ],
+    collegeBasketball = [
+      {name: "ESPNU: College Basketball", url:"https://tunein.com/embed/player/p307305/", podcast_group_id: PodcastGroup.where(name: "College Basketball")[0].id},
+      {name: "Podcast On The Brink", url:"https://tunein.com/embed/player/p399843/", podcast_group_id: PodcastGroup.where(name: "College Basketball")[0].id}
+    ]
+  ]
+
+  podcasts.each do |podcast|
+    Podcast.create podcast
+  
+  end
+
+
+ 
 
   puts "Finished user creation"
   puts "Finished seeding"

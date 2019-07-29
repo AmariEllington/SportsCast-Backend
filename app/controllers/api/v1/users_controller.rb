@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
     def index
         users = User.all
         
-        render json: users.to_json(:include => [:page], :except => [:updated_at, :created_at, :password_digest])
+        render json: users.to_json(:include => [:page], :except => [:updated_at, :created_at, :password_digest, :page_id])
       
       end
 

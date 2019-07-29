@@ -4,6 +4,8 @@ class CreatePages < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :twitter
       t.string :youtube
+
+      
     end
   end
 end

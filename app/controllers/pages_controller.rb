@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-    before_action :current_page, only: [:show, :edit, :update, :destroy]
+    before_action :current_page, only: [:show, :edit, :destroy]
 
     def index
       pages = Page.all
